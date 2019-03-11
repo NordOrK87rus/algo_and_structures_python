@@ -9,3 +9,28 @@
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
 """
+
+
+def get_operator():
+    op = input("Введите арифметическую операцию: ")
+    if op == '0' or op == '+' or op == '-' or op == '/' or op == '*':
+        return op
+    else:
+        return get_operator()
+
+
+while True:
+    a = float(input("Введите первое число: "))
+    b = float(input("Введите второе число: "))
+
+    op = get_operator()
+    if op == '0':
+        break
+    elif op == "+":
+        print(f"{a} {op} {b} = {a+b}")
+    elif op == "-":
+        print(f"{a} {op} {b} = {a-b}")
+    elif op == "*":
+        print(f"{a} {op} {b} = {a*b}")
+    elif op == "/":
+        print(f"{a} {op} {b} = {a/b}")
