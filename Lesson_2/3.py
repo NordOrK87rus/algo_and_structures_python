@@ -4,10 +4,23 @@
  то надо вывести число 6843.
 """
 
+
+# С помощью рекурсии
+def reverse(n, m):
+    if n == 0:
+        return m
+    else:
+        return reverse(n // 10, m * 10 + n % 10)
+
+
 n = int(input("Введите число: "))
+m = 0
+print(f"Recursion: {n} -> {reverse(n, m)}")
+
+# С помощью цикла
+n_bkp = n
 m = 0
 while n > 0:
     m = m * 10 + n % 10
     n = n // 10
-
-print(m)
+print(f"Loop: {n_bkp} -> {m}")
