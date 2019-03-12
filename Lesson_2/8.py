@@ -3,3 +3,21 @@
  последовательности чисел. Количество вводимых чисел и цифра,
  которую необходимо посчитать, задаются вводом с клавиатуры.
 """
+
+
+def calc_count(x, n, cnt=0):
+    if x == 0:
+        return cnt
+    else:
+        return calc_count(x // 10, n, cnt + int(x % 10 == n))
+
+
+tn = int(input("Введите искомую цифру: "))
+nums = input("Введите последовательность чисел, разделённых пробелами: ")
+
+cnt = 0
+for num in nums.split():
+    cnt += calc_count(int(num), tn)
+
+
+print(f"Цифра {tn} встречается {cnt} раз.")
