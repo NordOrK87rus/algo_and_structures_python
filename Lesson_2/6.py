@@ -5,3 +5,24 @@
 число, чем то, что загадано. Если за 10 попыток число не отгадано,
 то вывести загаданное число.
 """
+
+from random import randint
+
+n = randint(0, 100)
+attempt = 0
+print("Загадано число от 0 до 100.\nУ Вас 10 попоток чтобы угадать его.")
+while True:
+    if attempt < 10:
+        user_answer = int(input(f"\nосталось {10-attempt} попыток, введите ваше число: "))
+        if user_answer > n:
+            print(f"Неверно! Загадано число меньше чем {user_answer}.")
+        elif user_answer < n:
+            print(f"Неверно! Загадано число больше чем {user_answer}.")
+        else:
+            print(f"Поздравляем, вы угадали!")
+            break
+        attempt += 1
+    else:
+        print(f"\nК сожалению все попытки счерпаны и Вам не удалось узгадать число.\n"
+              f"Было загадано число {n}")
+        break
