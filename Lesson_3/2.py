@@ -5,3 +5,13 @@
 (или 0, 3, 4, 5 - если индексация начинается с нуля),
 т.к. именно в этих позициях первого массива стоят четные числа.
 """
+
+from random import randint
+
+array_len = 10
+
+a = [randint(0, 100) for _ in range(array_len)]
+b = [a[i] for i in range(len(a)) if a[i] % 2 == 0]
+
+print(f"Исходный массив: {a}\nМассив четных элементов: {b}")
+
