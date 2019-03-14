@@ -8,7 +8,7 @@ from random import randint
 array_len = 6
 a = [randint(0, 100) for _ in range(array_len)]
 
-max_v, min_v, min_i, max_i = None, None, None, None
+max_v, min_v, min_i, max_i = a[0], a[0], 0, 0
 
 for i in range(len(a)):
     if a[i] > max_v:
@@ -17,6 +17,7 @@ for i in range(len(a)):
         min_i = i
 
 print(f"Исходный массив: {a}")
+
 #  Варинт 1
 s = a[min_i+1]
 for i in range(min_i+1, max_i):
@@ -24,3 +25,6 @@ for i in range(min_i+1, max_i):
 print(f"Вариант 1: Сумма = {s}")
 
 
+# Вариант 2
+s = sum(a[min_i+1:max_i-1])
+print(f"Вариант 2: Сумма = {s}")
