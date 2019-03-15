@@ -3,16 +3,12 @@
 
 
 def multupl(d):
-    for i in range(2, 10):
-        if d % i:
-            return False
-    return True
+    cnt = 0
+    for i in range(2, 100):
+        if i % d:
+            cnt += 1
+    return cnt
 
 
-cnt = 0
-for i in range(2, 100):
-    m = multupl(i)
-    cnt += int(m)
-    print(f"{i} - {m}", end=' ')
-
-print(f"\n{cnt}")
+for i in range(2, 10):
+    print(f"Числу {i} кратно {multupl(i)} чисел из диапазона от 2 до 99")
