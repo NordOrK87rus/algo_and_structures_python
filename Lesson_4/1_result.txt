@@ -1,0 +1,86 @@
+Создано 4 варианта реализации алгоритма поиска наиболее часто встречающегося числа
+
+При первичном замере производительности, наиболее оптимальным по скорости работы является num_counter3().
+Наименее сложными алгоритмами ясвляются num_counter3() и num_counter4()
+
+При добавлении меморизации, увеличивается и сложность алгоритмов.
+В резульате повторного замера, наиболее производительным является алгоритм num_counter1().
+Наименее сложными алгоритмами ясвляются num_counter3(), num_counter4() и num_counter1().
+
+Добавление меморизации не принесло увеличения производительности, а наоборот замедлило.
+
+
+------------------------------------------------------------------------------------
+
+         64 function calls in 0.000 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 1.py:24(num_counter1)
+        9    0.000    0.000    0.000    0.000 1.py:26(count_n)
+        1    0.000    0.000    0.000    0.000 1.py:38(num_counter2)
+        9    0.000    0.000    0.000    0.000 1.py:40(count_n)
+        1    0.000    0.000    0.000    0.000 1.py:59(num_counter3)
+        6    0.000    0.000    0.000    0.000 1.py:61(count_n)
+        1    0.000    0.000    0.000    0.000 1.py:73(num_counter4)
+        6    0.000    0.000    0.000    0.000 1.py:75(count_n)
+        1    0.000    0.000    0.000    0.000 1.py:78(<dictcomp>)
+        1    0.000    0.000    0.000    0.000 1.py:93(main)
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       21    0.000    0.000    0.000    0.000 {method 'count' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+
+
+num_counter1: 2.3884121299925027
+num_counter2: 10.3631330000062
+num_counter3: 2.2078553850005846
+num_counter4: 3.409877583006164
+
+----
+с меморизацией
+
+         187 function calls in 0.001 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        4    0.000    0.000    0.000    0.000 1.py:12(memorize)
+       30    0.000    0.000    0.000    0.000 1.py:13(wrapper)
+        1    0.000    0.000    0.000    0.000 1.py:24(num_counter1)
+        6    0.000    0.000    0.000    0.000 1.py:25(count_n)
+        1    0.000    0.000    0.000    0.000 1.py:39(num_counter2)
+        9    0.000    0.000    0.000    0.000 1.py:40(count_n)
+        1    0.000    0.000    0.000    0.000 1.py:59(num_counter3)
+        6    0.000    0.000    0.000    0.000 1.py:60(count_n)
+        1    0.000    0.000    0.000    0.000 1.py:74(num_counter4)
+        6    0.000    0.000    0.000    0.000 1.py:75(count_n)
+        1    0.000    0.000    0.001    0.001 1.py:93(main)
+        1    0.000    0.000    0.001    0.001 <string>:1(<module>)
+        4    0.000    0.000    0.000    0.000 functools.py:37(update_wrapper)
+        4    0.000    0.000    0.000    0.000 functools.py:67(wraps)
+        1    0.000    0.000    0.001    0.001 {built-in method builtins.exec}
+       28    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       20    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+       18    0.000    0.000    0.000    0.000 {method 'count' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+       30    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        6    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        4    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+
+
+num_counter1: 7.475841824998497
+num_counter2: 14.240264236999792
+num_counter3: 8.275101946012
+num_counter4: 10.688365152003826
+
+----
