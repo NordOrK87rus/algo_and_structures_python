@@ -26,8 +26,8 @@ class TestClass_2(object):
         self.p3 = p3
 
 
-cd = TestClass_1(1, "Q", (1,2,3,))
-cs = TestClass_2(1, "Q", (1,2,3,))
+cd = TestClass_1(1, "Q", (1, 2, 3,))
+cs = TestClass_2(1, "Q", (1, 2, 3,))
 
 print(f"\n\"TestClass_1\": \n - словарь атрибутов: {cd.__dict__}\n"
       f" - объёмы памяти выделенные для хранения атрибутов класса: "
