@@ -17,9 +17,11 @@ def bubble_sorting(data):
     return data
 
 
-data_list = [randint(-100, 100) for _ in range(500)]
+data_list = [randint(-100, 100) for _ in range(10)]
+print(f"Исходный массив:        {data_list}")
+print(f"Отсортированный массив: {bubble_sorting(data_list)}")
 
-print(timeit('bubble_sorting(data_list)',
-             setup='from __main__ import bubble_sorting, data_list',
-             number=100))
+# print(timeit('bubble_sorting(data_list)',
+#              setup='from __main__ import bubble_sorting, data_list',
+#              number=100))
 
