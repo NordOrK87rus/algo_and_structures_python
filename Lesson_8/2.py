@@ -3,21 +3,21 @@
 Пусть дана строка S длиной N, состоящая только из маленьких латинских букв.
 Требуется найти количество различных подстрок в этой строке.
 """
+s = input("Введите строку: ")
 
-# s = input("Введите строку: ")
-s = "pasta"
-result = set()
 
-for i in range(len(s)):
-    if i == 0:
-        n = len(s) - 1
+def get_subs(string):
+    if len(string) == 1:
+        return {hash(string)}
     else:
-        n = len(s)
-
-    for j in range(n, i, -1):
-        # substr.add(hash(str_in[i:j]))
-        result.add(s[i:j])
+        res = {hash(string)} | get_subs(string[1:])
+        return res
 
 
-# <class 'set'>: {'p', 'asta', 'ta', 'st', 'sta', 's', 'a', 'ast', 'pa', 'past', 'as', 't', 'pas'} len=13
-# print(f"Количество различных подстрок в строке: {len(substr)}")
+result = set()
+s_len = len(s)
+for i in range(s_len):
+    result.add(hash(s[i]))
+    result |= get_subs(s[:s_len - i])
+
+print(f"Количество различных подстрок в строке: {len(result ^ {hash(s)})}")
